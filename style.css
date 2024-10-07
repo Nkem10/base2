@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+:root {
+    --salmon-gradient: linear-gradient(to bottom right, #f8bfbf, #ee8b8b);
+    --brown: #423a3a;
+    --pink-brown: #ce9898;
+    --pink: #ee8b8b;
+}
+
+/* ! Common */
+
+.wrapper {
+    width: 100%;
+    max-width: 72.4rem;
+    padding: 0 3rem;
+}
+
+.main-container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main-img"
+        "main-section";
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 30% 60%;
+    font-family: "Josefin Sans";
+}
+
+/* ! Header */
+
+.header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ! Image */
+
+
+.main-img {
+    background-image: url("images/hero-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ! Text section */
+
+.main-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(to right, hsl(0, 0%, 100%),hsl(0, 100%, 98%));}
+
+.main-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 72.4rem;
+}
+
+.headings {
+    letter-spacing: 1rem;
+    font-size: 2.4rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.headings h2 { 
+    font-weight: 400;
+}
+
+.headings h2:first-of-type {
+    color: var(--pink);
+}
+
+.main-p {
+    font-size: 1.3rem;
+    line-height: 200%;
+    text-align: center;
+    font-weight: 400;
+    color: var(--pink-brown);
+}
+
+/* ! Form */
+
+.form {
+    width: 100%;
+    border: none;
+    transition: opacity .25s forwards;
+}
+
+.form-inputs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.form-inputs input {
+    flex-grow: 1;
+    flex-basis: 100%;
+    height: 4.8rem;
+    border-radius: 5.6rem;
+    border: 1px solid var(--pink);
+    padding: 2rem 2.4rem;
+    font-family: "Josefin Sans";
+}
+
+.form-inputs input::placeholder {
+    color: var(--pink);
+}
+
+.form-inputs button {
+    margin-left: -20%;
+    width: 20%;
+    height: 4.8rem;
+    border-radius: 5.6rem;
+    border: none;
+    background: var(--salmon-gradient);
+    cursor: pointer;
+}
+
+.form-inputs button:hover {
+    background: var(--pink-brown);
+}
+
+/* ! Javascript */
+
+.error-icon {
+    position: absolute;
+    right: 25%;
+}
+
+.error-msg {
+    padding: 1rem 2.4rem;
+    font-size: 1.4rem;
+    color: red;
+    font-weight: 400;
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+.hide {
+    opacity: 0;
+}
+
+/* ! Responsiveness */
+
+@media (min-width: 501px) {
+    .main-p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 640px) {
+
+    .main-img {
+        background-image: url("images/hero-mobile.jpg");
+    }
+
+    .main-container {
+        grid-template-rows: 10% 45% 45%;
+    }
+
+    .main-p {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+}
+
+@media (min-width: 1080px) {
+
+    .wrapper {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+    .main-container {
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 10% 90%;
+    }
+
+    .header, .main-section {
+        grid-column: 1;
+    }
+
+    .main-img {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        background-image: url("images/hero-desktop.jpg");
+    }
+
+    .header {
+        background-color: transparent;
+    }
+
+    .main-container {
+        background: url("images/bg-pattern-desktop.svg") cover no-repeat;
+    }
+
+    .main-section-wrapper {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .headings {
+        font-size: 4.8rem;
+        text-align: left;
+        letter-spacing: 1.4rem;
+    }
+
+    .main-p {
+        font-size: 2.4rem;
+        line-height: 175%;
+        text-align: left;
+    }
+}
