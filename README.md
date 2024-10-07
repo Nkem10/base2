@@ -17,7 +17,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./desktop-design.jpg)](https://github.com/Nkem10/base2/blob/main/design/desktop-design.jpg)
+![](/Users/admin/Downloads/base-apparel-coming-soon-master/design)
 
 
 ### Links
